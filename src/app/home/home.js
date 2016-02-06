@@ -38,8 +38,43 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-})
+.controller( 'HomeCtrl', function HomeController( $scope,$state,$stateParams ) {
 
-;
+  $scope.text = {};
+
+  $scope.analyze = function() {
+    var x = $scope.text;
+    console.log(x.test);
+
+    var res = x.test.slice(0,2);
+    console.log(res);
+
+
+    if(res === "I ") {
+      console.log('employee 1');
+      $state.go('about',{id:1});
+    } else if (res === "We") {
+      console.log('employee 2');
+      $state.go('about',{id:2});
+    } else if (res === "Go") {
+      console.log('employee 3');
+      $state.go('about',{id:3});
+    } else if (res === "Wi") {
+      console.log('employee 4');
+      $state.go('about',{id:4});
+    } else if (res === "As") {
+      console.log('employee 5');
+      $state.go('about',{id:5});
+    } else {
+      alert('put in the right data pleaseeeeeee');
+    }
+
+
+
+
+    console.log('go');
+  };
+
+
+});
 
